@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A6A6A6">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="267dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/sbfTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:backgroundTintMode="multiply"
+                android:text="SBF"
+                android:textColor="#800080"
+                android:textSize="60sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/accountImage"
+                android:layout_width="168dp"
+                android:layout_height="160dp"
+                android:layout_alignStart="@+id/sbfTitle"
+                android:layout_alignEnd="@+id/sbfTitle"
+                android:layout_alignBottom="@+id/sbfTitle"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="-31dp"
+                android:layout_marginTop="82dp"
+                android:layout_marginEnd="-30dp"
+                android:layout_marginBottom="-162dp"
+                android:src="@drawable/account" />
+
+        </RelativeLayout>
+
+        <EditText
+    android:id="@+id/emailEditText"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="48dp"
+    android:background="#C9C9E0"
+    android:padding="10dp"
+    android:hint="Email:"
+    android:textColor="#000000"
+    android:textColorHint="#808080" />
+
+        <EditText
+    android:id="@+id/passwordEditText"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="48dp"
+    android:background="#C9C9E0"
+    android:padding="10dp"
+    android:hint="Password:"
+    android:textColor="#000000"
+    android:textColorHint="#808080"
+    android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/signInButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Sign in"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:background="#B1B98E" />
+
+        <!-- OR Label -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="or"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:paddingTop="10dp" />
+
+        <!-- Social Icons -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginEnd="30dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/fb" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FB"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/google" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Google"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
