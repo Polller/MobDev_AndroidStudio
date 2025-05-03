@@ -14,10 +14,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Apply Band Member"
+            android:text="Apply Band"
             android:textColor="#000000"
             android:textSize="26sp"
             android:textStyle="bold"
+            android:paddingTop="20dp"
             android:paddingBottom="20dp"/>
 
         <ImageView
@@ -26,12 +27,67 @@
             android:src="@drawable/apply_band_member" />
 
         <TextView
+            android:id="@+id/bandInfoText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="vinzem Band: 97% hiring"
+            android:text="Find a Band"
             android:textColor="#000000"
             android:textSize="18sp"
-            android:paddingTop="20dp" />
+            android:paddingTop="20dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+
+        <EditText
+            android:id="@+id/editTextText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="Name"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
+
+
+
+        <EditText
+            android:id="@+id/editTextAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Address"
+            android:layout_marginBottom="20dp" />
+
+        <EditText
+            android:id="@+id/editTextAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            android:layout_marginBottom="20dp" />
+
+        <AutoCompleteTextView
+            android:id="@+id/genreDropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Music Genre"
+            android:layout_marginBottom="20dp"
+            android:inputType="none"
+            android:focusable="false" />
+
+        <AutoCompleteTextView
+            android:id="@+id/instrumentDropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Instrument"
+            android:layout_marginBottom="20dp"
+            android:inputType="none"
+            android:focusable="false" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="199dp"
+            android:layout_height="wrap_content"
+            android:text="Apply" />
+
 
     </LinearLayout>
 </ScrollView>

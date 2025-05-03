@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
 
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Please enter both email and password", Toast.LENGTH_SHORT).show();
+            } else if (!email.contains("@")) {
+                Toast.makeText(this, "Invalid email. It must contain '@'", Toast.LENGTH_SHORT).show();
+            } else if (password.length() < 8) {
+                Toast.makeText(this, "Password must be at least 8 characters long", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, "Logging in as " + email, Toast.LENGTH_SHORT).show();
 
@@ -36,5 +40,6 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
     }
 }

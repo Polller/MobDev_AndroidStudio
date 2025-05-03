@@ -12,7 +12,6 @@ public class MainActivity2 extends AppCompatActivity {
     private LinearLayout genreTypeLayout;
     private LinearLayout musicArtistTypeLayout;
     private LinearLayout musicGenerationTypeLayout;
-    private LinearLayout hireBandMemberLayout;
     private LinearLayout applyBandMemberLayout;
 
     @Override
@@ -24,7 +23,6 @@ public class MainActivity2 extends AppCompatActivity {
         genreTypeLayout = findViewById(R.id.genreTypeLayout);
         musicArtistTypeLayout = findViewById(R.id.musicArtistTypeLayout);
         musicGenerationTypeLayout = findViewById(R.id.musicGenerationTypeLayout);
-        hireBandMemberLayout = findViewById(R.id.hireBandMemberLayout);
         applyBandMemberLayout = findViewById(R.id.applyBandMemberLayout);
 
         topHiringBandLayout.setOnClickListener(new View.OnClickListener() {
@@ -55,14 +53,6 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity2.this, MainActivity6.class);
-                startActivity(intent);
-            }
-        });
-
-        hireBandMemberLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity2.this, MainActivity7.class);
                 startActivity(intent);
             }
         });
