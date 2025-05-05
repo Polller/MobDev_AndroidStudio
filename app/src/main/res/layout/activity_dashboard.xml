@@ -57,11 +57,17 @@
                 android:orientation="horizontal"
                 android:padding="8dp">
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@android:drawable/ic_menu_search" />
+                <EditText
+                    android:id="@+id/searchEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Search..."
+                    android:padding="10dp"
+                    android:background="@android:color/transparent"
+                    android:textColor="#000"
+                    android:textColorHint="#777" />
             </LinearLayout>
+
         </LinearLayout>
 
         <GridLayout
