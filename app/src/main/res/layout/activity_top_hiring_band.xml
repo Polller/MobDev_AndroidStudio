@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Top Hiring Bands Page"
+            android:text="Vocalist Hiring Page"
             android:textColor="#000000"
             android:textSize="26sp"
             android:textStyle="bold"
@@ -23,15 +23,31 @@
         <ImageView
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:src="@drawable/top_hiring_band" />
+            android:src="@drawable/music_artist_type" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Granger Band: 97% hiring"
+            android:text="Vinzem Acabo: 97% hiring"
             android:textColor="#000000"
             android:textSize="18sp"
-            android:paddingTop="20dp" />
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Other Music Artists:"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingBottom="10dp"/>
+
+        <ListView
+            android:id="@+id/bandListView"
+            android:layout_width="match_parent"
+            android:layout_height="262dp"
+            android:dividerHeight="10dp" />
 
     </LinearLayout>
 </ScrollView>

@@ -17,6 +17,8 @@ public class MainActivity2 extends AppCompatActivity {
     private LinearLayout musicArtistTypeLayout;
     private LinearLayout musicGenerationTypeLayout;
     private LinearLayout applyBandMemberLayout;
+    private LinearLayout footerLogsLayout;
+    private LinearLayout footerChatLayout; 
     private EditText searchEditText;
 
     @Override
@@ -30,43 +32,24 @@ public class MainActivity2 extends AppCompatActivity {
         musicArtistTypeLayout = findViewById(R.id.musicArtistTypeLayout);
         musicGenerationTypeLayout = findViewById(R.id.musicGenerationTypeLayout);
         applyBandMemberLayout = findViewById(R.id.applyBandMemberLayout);
+        footerLogsLayout = findViewById(R.id.footerLogsLayout);
+        footerChatLayout = findViewById(R.id.footerChatLayout);
 
-        topHiringBandLayout.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
-            startActivity(intent);
-        });
+        topHiringBandLayout.setOnClickListener(v -> startActivity(new Intent(this, MainActivity3.class)));
+        genreTypeLayout.setOnClickListener(v -> startActivity(new Intent(this, MainActivity4.class)));
+        musicArtistTypeLayout.setOnClickListener(v -> startActivity(new Intent(this, MainActivity5.class)));
+        musicGenerationTypeLayout.setOnClickListener(v -> startActivity(new Intent(this, MainActivity6.class)));
+        applyBandMemberLayout.setOnClickListener(v -> startActivity(new Intent(this, MainActivity8.class)));
+        footerLogsLayout.setOnClickListener(v -> startActivity(new Intent(this, MainActivity9.class)));
 
-        genreTypeLayout.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity2.this, MainActivity4.class);
-            startActivity(intent);
-        });
-
-        musicArtistTypeLayout.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity2.this, MainActivity5.class);
-            startActivity(intent);
-        });
-
-        musicGenerationTypeLayout.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity2.this, MainActivity6.class);
-            startActivity(intent);
-        });
-
-        applyBandMemberLayout.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity2.this, MainActivity8.class);
-            startActivity(intent);
-        });
+        footerChatLayout.setOnClickListener(v -> startActivity(new Intent(this, ChatListActivity.class))); // NAVIGATE TO CHATLIST
 
         searchEditText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
                 filterItems(s.toString().toLowerCase());
             }
-
-            @Override
-            public void afterTextChanged(Editable s) {}
+            @Override public void afterTextChanged(Editable s) {}
         });
     }
 

@@ -37,7 +37,6 @@
             android:clickable="true"
             android:focusable="true" />
 
-
         <EditText
             android:id="@+id/editTextText2"
             android:layout_width="match_parent"
@@ -48,8 +47,6 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp" />
 
-
-
         <EditText
             android:id="@+id/editTextAddress"
             android:layout_width="match_parent"
@@ -58,7 +55,7 @@
             android:layout_marginBottom="20dp" />
 
         <EditText
-            android:id="@+id/editTextAddress"
+            android:id="@+id/editTextPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Phone Number"
@@ -87,7 +84,6 @@
             android:layout_width="199dp"
             android:layout_height="wrap_content"
             android:text="Apply" />
-
 
     </LinearLayout>
 </ScrollView>

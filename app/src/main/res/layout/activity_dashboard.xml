@@ -122,7 +122,6 @@
                     android:textColor="#D1D5DB" />
             </LinearLayout>
 
-            <!-- Music Artist Type -->
             <LinearLayout
                 android:id="@+id/musicArtistTypeLayout"
                 android:layout_width="wrap_content"
@@ -146,7 +145,6 @@
                     android:textColor="#D1D5DB" />
             </LinearLayout>
 
-            <!-- Music Generation Type -->
             <LinearLayout
                 android:id="@+id/musicGenerationTypeLayout"
                 android:layout_width="wrap_content"
@@ -170,7 +168,6 @@
                     android:textColor="#D1D5DB" />
             </LinearLayout>
 
-            <!-- Apply Band Member -->
             <LinearLayout
                 android:id="@+id/applyBandMemberLayout"
                 android:layout_width="wrap_content"
@@ -194,5 +191,59 @@
                     android:textColor="#D1D5DB" />
             </LinearLayout>
         </GridLayout>
+
+        <LinearLayout
+            android:id="@+id/footerLogsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="16dp"
+            android:background="#6B7280"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_info_details"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View Footer Logs"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- NEW CHAT FOOTER BUTTON -->
+        <LinearLayout
+            android:id="@+id/footerChatLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="16dp"
+            android:background="#6B7280"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_send"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Go to Chat"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+        </LinearLayout>
+
     </LinearLayout>
 </ScrollView>

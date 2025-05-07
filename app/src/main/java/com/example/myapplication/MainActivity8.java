@@ -45,7 +45,7 @@ public class MainActivity8 extends AppCompatActivity {
         instrumentDropdown.setAdapter(instrumentAdapter);
         instrumentDropdown.setOnClickListener(v -> instrumentDropdown.showDropDown());
 
-        // Band Info TextView (Clickable)
+        // Band Info TextView
         TextView bandInfoText = findViewById(R.id.bandInfoText);
         String[][] bands = {
                 {"Vinzem Band", "Rock"},
@@ -69,21 +69,20 @@ public class MainActivity8 extends AppCompatActivity {
                     .show();
         });
 
-        // Apply Button (Clear all fields and reset to default state)
+        // Fields
+        EditText nameField = findViewById(R.id.editTextText2);
+        EditText addressField = findViewById(R.id.editTextAddress);
+        EditText phoneField = findViewById(R.id.editTextPhone);
+
+        // Apply Button
         Button applyButton = findViewById(R.id.button);
         applyButton.setOnClickListener(v -> {
-            // Clear all input fields
-            genreDropdown.setText("");  // Clear genre dropdown
-            instrumentDropdown.setText("");  // Clear instrument dropdown
-            bandInfoText.setText("Vinzem Band: 97% hiring");  // Reset band info text
-
-            // Clear the name field
-            EditText nameField = findViewById(R.id.editTextText2); // Name field
+            genreDropdown.setText("");
+            instrumentDropdown.setText("");
+            bandInfoText.setText("Find a Band");
             nameField.setText("");
-
-            // Clear the address field (add this part)
-            EditText addressField = findViewById(R.id.editTextAddress); // Address field
             addressField.setText("");
+            phoneField.setText(""); // Clear phone number field
         });
     }
 }
