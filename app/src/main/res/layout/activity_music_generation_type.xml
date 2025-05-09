@@ -2,138 +2,76 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E5E5E5">
+    android:background="#F7F7F7">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="30dp">
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
 
-        <!-- Title Text -->
+        <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Music Generation Type"
-            android:textColor="#000000"
             android:textSize="26sp"
             android:textStyle="bold"
-            android:paddingBottom="20dp"/>
+            android:textColor="#000000"
+            android:paddingBottom="16dp" />
 
         <!-- Image -->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:src="@drawable/music_generation_type" />
+            android:src="@drawable/music_generation_type"
+            android:contentDescription="Music Generation Image" />
 
-        <!-- Subtitle Text -->
+        <!-- Subtitle -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="mameen Band: 87% hiring"
-            android:textColor="#000000"
             android:textSize="18sp"
-            android:paddingTop="20dp" />
+            android:textColor="#333333"
+            android:paddingTop="20dp"
+            android:paddingBottom="16dp" />
 
-        <!-- Genre TextView (Hip Hop) -->
+        <!-- Generation Types -->
         <TextView
-            android:id="@+id/textViewGenre2"
+            android:id="@+id/textViewGen90s"
+            style="@style/GenreItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hip Hop"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="16dp"
-            android:clickable="true"
-            android:focusable="false"
-            android:padding="10dp"
-            android:background="?android:attr/selectableItemBackground" />
+            android:text="🎶 90s" />
 
-        <!-- Genre TextView (Classical) -->
         <TextView
-            android:id="@+id/textViewGenre3"
+            android:id="@+id/textViewGen80s"
+            style="@style/GenreItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Classical"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:layout_marginBottom="16dp"
-            android:clickable="true"
-            android:focusable="false"
-            android:padding="10dp"
-            android:background="?android:attr/selectableItemBackground" />
+            android:text="📼 80s" />
 
-        <!-- Genre TextView (Rock) -->
         <TextView
-            android:id="@+id/textViewGenre4"
+            android:id="@+id/textViewGen20s"
+            style="@style/GenreItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Rock"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:layout_marginBottom="16dp"
-            android:clickable="true"
-            android:focusable="false"
-            android:padding="10dp"
-            android:background="?android:attr/selectableItemBackground" />
+            android:text="📱 20s" />
 
-        <!-- Genre TextView (Jazz) -->
         <TextView
-            android:id="@+id/textViewGenre5"
+            android:id="@+id/textViewGen70s"
+            style="@style/GenreItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Jazz"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:layout_marginBottom="16dp"
-            android:clickable="true"
-            android:focusable="false"
-            android:padding="10dp"
-            android:background="?android:attr/selectableItemBackground" />
+            android:text="📻 70s" />
 
-        <!-- Genre TextView (Pop) -->
         <TextView
-            android:id="@+id/textViewGenre6"
+            android:id="@+id/textViewGen60s"
+            style="@style/GenreItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pop"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:layout_marginBottom="16dp"
-            android:clickable="true"
-            android:focusable="false"
-            android:padding="10dp"
-            android:background="?android:attr/selectableItemBackground" />
-
-        <!-- Genre TextView (EDM) -->
-        <TextView
-            android:id="@+id/textViewGenre7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="EDM"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:layout_marginBottom="16dp"
-            android:clickable="true"
-            android:focusable="false"
-            android:padding="10dp"
-            android:background="?android:attr/selectableItemBackground" />
-
-        <!-- Genre TextView (Country) -->
-        <TextView
-            android:id="@+id/textViewGenre8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Country"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:layout_marginBottom="16dp"
-            android:clickable="true"
-            android:focusable="false"
-            android:padding="10dp"
-            android:background="?android:attr/selectableItemBackground" />
-
+            android:text="🕺 60s" />
     </LinearLayout>
 </ScrollView>

@@ -2,36 +2,89 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E5E5E5">
+    android:background="#F7F7F7">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="30dp">
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
 
+        <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Genre Type"
-            android:textColor="#000000"
             android:textSize="26sp"
             android:textStyle="bold"
-            android:paddingBottom="20dp"/>
+            android:textColor="#000000"
+            android:paddingBottom="16dp" />
 
+        <!-- Image -->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:src="@drawable/genre_type" />
+            android:src="@drawable/genre_type"
+            android:contentDescription="Music Generation Image" />
 
+        <!-- Subtitle -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="heh Band: 87% hiring"
-            android:textColor="#000000"
+            android:text="mameen Band: 87% hiring"
             android:textSize="18sp"
-            android:paddingTop="20dp" />
+            android:textColor="#333333"
+            android:paddingTop="20dp"
+            android:paddingBottom="16dp" />
 
+        <TextView
+            android:id="@+id/textViewGenre2"
+            style="@style/GenreItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🎤 Hip Hop" />
+
+        <TextView
+            android:id="@+id/textViewGenre3"
+            style="@style/GenreItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🎻 Classical" />
+
+        <TextView
+            android:id="@+id/textViewGenre4"
+            style="@style/GenreItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🎸 Rock" />
+
+        <TextView
+            android:id="@+id/textViewGenre5"
+            style="@style/GenreItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🎷 Jazz" />
+
+        <TextView
+            android:id="@+id/textViewGenre6"
+            style="@style/GenreItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🎤 Pop" />
+
+        <TextView
+            android:id="@+id/textViewGenre7"
+            style="@style/GenreItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🎧 EDM" />
+
+        <TextView
+            android:id="@+id/textViewGenre8"
+            style="@style/GenreItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🤠 Country" />
     </LinearLayout>
 </ScrollView>

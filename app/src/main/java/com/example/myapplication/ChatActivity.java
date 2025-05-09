@@ -48,7 +48,7 @@ public class ChatActivity extends AppCompatActivity {
                 inputMessage.setText("");
 
                 chatContainer.postDelayed(() -> {
-                    String reply = "Echo - " + message;
+                    String reply = " " + message;
                     addMessageToChat(reply, false);
                     messageList.add("bot:" + reply);
                     saveMessages();

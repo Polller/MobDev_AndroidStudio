@@ -18,7 +18,7 @@ public class MainActivity2 extends AppCompatActivity {
     private LinearLayout musicGenerationTypeLayout;
     private LinearLayout applyBandMemberLayout;
     private LinearLayout footerLogsLayout;
-    private LinearLayout footerChatLayout; 
+    private LinearLayout footerChatLayout;
     private EditText searchEditText;
 
     @Override

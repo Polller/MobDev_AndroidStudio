@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 import android.app.AlertDialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -25,14 +27,14 @@ public class MainActivity3 extends AppCompatActivity {
     };
 
     String[] descriptions = {
-            "Shadow Notes Band delivers poetic indie rock inspired by Arctic Monkeys and Radiohead. Their emotional lyrics, combined with tight instrumentals, make them a perfect choice for intimate concerts or energetic stages. Hiring them guarantees a unique, heartfelt performance.",
-            "Echo Pulse brings the excitement of synth pop with a modern twist, drawing inspiration from CHVRCHES and Owl City. Their upbeat rhythms and electronic vibes make them ideal for lively events and youth-oriented festivals.",
-            "Neon Rhythms fuses dance rock with electronic elements, reminiscent of Daft Punk and The 1975. Known for their high-energy sets, they’re a great choice for events where you want the crowd dancing all night.",
-            "The Bass Breakers are a funk rock powerhouse with influences from Red Hot Chili Peppers and Bootsy Collins. Their groovy rhythms and stage presence are sure to hype up any audience and bring people to the dance floor.",
-            "Crimson Sound offers a powerful alternative metal experience, echoing the styles of Linkin Park and Evanescence. With heavy riffs and emotional vocals, they’re perfect for dramatic, energetic performances.",
-            "Funky Strums blends soul and funk, channeling James Brown and Stevie Wonder in every performance. Their brass section and vintage vibe will light up any venue with retro charm and irresistible rhythm.",
-            "Golden Mic delivers acoustic pop filled with storytelling and smooth melodies, influenced by Ed Sheeran and Colbie Caillat. Their heartfelt performances are perfect for romantic, relaxed settings like weddings or cafes.",
-            "Silent Amp creates ambient rock soundscapes inspired by Sigur Rós and Explosions in the Sky. Their dreamy, instrumental-driven performances make them ideal for artistic events and peaceful atmospheres."
+            "📍 Location: Manila, Philippines\n🎶 Genre: Indie Rock\n💰 Price: ₱25,000 - ₱35,000 per show",
+            "📍 Location: Quezon City, Philippines\n🎶 Genre: Synth Pop\n💰 Price: ₱18,000 - ₱28,000 per show",
+            "📍 Location: Cebu City, Philippines\n🎶 Genre: Dance Rock / Electronic\n💰 Price: ₱30,000 - ₱40,000 per show",
+            "📍 Location: Davao City, Philippines\n🎶 Genre: Funk Rock\n💰 Price: ₱22,000 - ₱32,000 per show",
+            "📍 Location: Baguio City, Philippines\n🎶 Genre: Alternative Metal\n💰 Price: ₱27,000 - ₱38,000 per show",
+            "📍 Location: Makati, Philippines\n🎶 Genre: Soul / Funk\n💰 Price: ₱20,000 - ₱30,000 per show",
+            "📍 Location: Tagaytay, Philippines\n🎶 Genre: Acoustic Pop\n💰 Price: ₱15,000 - ₱25,000 per show",
+            "📍 Location: Iloilo City, Philippines\n🎶 Genre: Ambient Rock\n💰 Price: ₱19,000 - ₱29,000 per show"
     };
 
     @Override
@@ -55,6 +57,7 @@ public class MainActivity3 extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(bandName);
 
+        // Band description
         TextView descriptionView = new TextView(this);
         descriptionView.setText(description);
         descriptionView.setPadding(30, 30, 30, 30);
@@ -67,14 +70,24 @@ public class MainActivity3 extends AppCompatActivity {
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.addView(scrollView);
 
-        Button messageButton = new Button(this);
-        messageButton.setText("Message!");
-        messageButton.setOnClickListener(v -> {
-            builder.setCancelable(true);
-            builder.create().dismiss();
+        // Hire button
+        Button hireButton = new Button(this);
+        hireButton.setText("Hire Band");
+        hireButton.setOnClickListener(v -> {
+            // Save to SharedPreferences
+            SharedPreferences prefs = getSharedPreferences("chat_prefs", MODE_PRIVATE);
+            String existingChats = prefs.getString("chat_list", "");
+            if (!existingChats.contains(bandName)) {
+                existingChats += bandName + ";";
+                prefs.edit().putString("chat_list", existingChats).apply();
+            }
+
+            // Go to ChatListActivity
+            Intent intent = new Intent(MainActivity3.this, ChatListActivity.class);
+            startActivity(intent);
         });
 
-        layout.addView(messageButton);
+        layout.addView(hireButton);
         layout.setPadding(30, 30, 30, 30);
 
         builder.setView(layout);
