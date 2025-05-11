@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e1e1e1">
+    android:background="#E5E5E5">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,11 +19,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="History"
+                android:text="Booking Status"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </RelativeLayout>
+
         <ImageView
             android:paddingTop="30dp"
             android:layout_width="200dp"
@@ -37,6 +38,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/hireLogsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
 
     </LinearLayout>
 </ScrollView>

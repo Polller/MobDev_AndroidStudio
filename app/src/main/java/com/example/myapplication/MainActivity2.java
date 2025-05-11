@@ -19,6 +19,7 @@ public class MainActivity2 extends AppCompatActivity {
     private LinearLayout applyBandMemberLayout;
     private LinearLayout footerLogsLayout;
     private LinearLayout footerChatLayout;
+    private LinearLayout footerStatusLayout;
     private EditText searchEditText;
 
     @Override
@@ -34,6 +35,7 @@ public class MainActivity2 extends AppCompatActivity {
         applyBandMemberLayout = findViewById(R.id.applyBandMemberLayout);
         footerLogsLayout = findViewById(R.id.footerLogsLayout);
         footerChatLayout = findViewById(R.id.footerChatLayout);
+        footerStatusLayout = findViewById(R.id.footerStatusLayout);
 
         topHiringBandLayout.setOnClickListener(v -> startActivity(new Intent(this, MainActivity3.class)));
         genreTypeLayout.setOnClickListener(v -> startActivity(new Intent(this, MainActivity4.class)));
@@ -42,8 +44,8 @@ public class MainActivity2 extends AppCompatActivity {
         applyBandMemberLayout.setOnClickListener(v -> startActivity(new Intent(this, MainActivity8.class)));
         footerLogsLayout.setOnClickListener(v -> startActivity(new Intent(this, MainActivity9.class)));
 
-        footerChatLayout.setOnClickListener(v -> startActivity(new Intent(this, ChatListActivity.class))); // NAVIGATE TO CHATLIST
-
+        footerChatLayout.setOnClickListener(v -> startActivity(new Intent(this, ChatListActivity.class)));
+        footerStatusLayout.setOnClickListener(v -> startActivity(new Intent(this, BandStatusActivity.class)));
         searchEditText.addTextChangedListener(new TextWatcher() {
             @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override public void onTextChanged(CharSequence s, int start, int before, int count) {

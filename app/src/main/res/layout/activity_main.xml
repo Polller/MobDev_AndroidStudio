@@ -76,7 +76,6 @@
             android:textColor="#000000"
             android:background="#B1B98E" />
 
-        <!-- OR Label -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -85,7 +84,6 @@
             android:textColor="#000000"
             android:paddingTop="10dp" />
 
-        <!-- Social Icons -->
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"

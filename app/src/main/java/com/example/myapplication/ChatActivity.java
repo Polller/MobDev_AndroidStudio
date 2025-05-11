@@ -14,7 +14,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class ChatActivity extends AppCompatActivity {
 
@@ -36,8 +35,12 @@ public class ChatActivity extends AppCompatActivity {
         chatScroll = findViewById(R.id.chatScroll);
 
         chatName = getIntent().getStringExtra("chatName");
-        messageList = new ArrayList<>();
 
+        // Set chat name at the top
+        TextView chatNameText = findViewById(R.id.chatNameText);
+        chatNameText.setText(chatName);
+
+        messageList = new ArrayList<>();
         loadMessages();
 
         sendButton.setOnClickListener(v -> {

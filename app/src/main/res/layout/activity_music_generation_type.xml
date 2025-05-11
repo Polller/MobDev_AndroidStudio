@@ -2,76 +2,130 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F7F7">
+    android:background="#e1e1e1">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:gravity="center_horizontal">
+        android:orientation="vertical">
 
-        <!-- Title -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Music Generation Type"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:paddingBottom="16dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#800080"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
 
-        <!-- Image -->
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/music_generation_type"
-            android:contentDescription="Music Generation Image" />
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@android:drawable/ic_media_previous"
+                android:tint="#FFFFFF" />
 
-        <!-- Subtitle -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="mameen Band: 87% hiring"
-            android:textSize="18sp"
-            android:textColor="#333333"
-            android:paddingTop="20dp"
-            android:paddingBottom="16dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Music Generation Type"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
-        <!-- Generation Types -->
-        <TextView
-            android:id="@+id/textViewGen90s"
-            style="@style/GenreItem"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="🎶 90s" />
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="16dp">
 
-        <TextView
-            android:id="@+id/textViewGen80s"
-            style="@style/GenreItem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="📼 80s" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Music Generation Type"
+                android:textColor="#800080"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:paddingBottom="20dp" />
 
-        <TextView
-            android:id="@+id/textViewGen20s"
-            style="@style/GenreItem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="📱 20s" />
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/music_generation_type"
+                android:layout_marginBottom="12dp" />
 
-        <TextView
-            android:id="@+id/textViewGen70s"
-            style="@style/GenreItem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="📻 70s" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ABBA: 89% hiring"
+                android:textColor="#800080"
+                android:textSize="20sp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textStyle="bold|italic"
+                android:background="@drawable/textview_border"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:layout_marginBottom="12dp" />
 
-        <TextView
-            android:id="@+id/textViewGen60s"
-            style="@style/GenreItem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="🕺 60s" />
+            <TextView
+                android:id="@+id/textViewGen90s"
+                style="@style/GenreItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🎶 90s"
+                android:textColor="#111827"
+                android:textSize="20sp"
+                android:background="@drawable/textview_border"
+                android:paddingBottom="10dp" />
+
+            <TextView
+                android:id="@+id/textViewGen80s"
+                style="@style/GenreItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📼 80s"
+                android:textColor="#111827"
+                android:textSize="20sp"
+                android:background="@drawable/textview_border"
+                android:paddingBottom="10dp" />
+
+            <TextView
+                android:id="@+id/textViewGen20s"
+                style="@style/GenreItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📱 20s"
+                android:textColor="#111827"
+                android:textSize="20sp"
+                android:background="@drawable/textview_border"
+                android:paddingBottom="10dp" />
+
+            <TextView
+                android:id="@+id/textViewGen70s"
+                style="@style/GenreItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📻 70s"
+                android:textColor="#111827"
+                android:textSize="20sp"
+                android:background="@drawable/textview_border"
+                android:paddingBottom="10dp" />
+
+            <TextView
+                android:id="@+id/textViewGen60s"
+                style="@style/GenreItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🕺 60s"
+                android:textColor="#111827"
+                android:textSize="20sp"
+                android:background="@drawable/textview_border"
+                android:paddingBottom="30dp" />
+        </LinearLayout>
+
     </LinearLayout>
 </ScrollView>

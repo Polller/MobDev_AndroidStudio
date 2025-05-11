@@ -2,88 +2,129 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E5E5E5">
+    android:background="#e1e1e1">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="30dp">
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#800080"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Apply to Join a Band"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Apply Band"
-            android:textColor="#000000"
-            android:textSize="26sp"
+            android:textColor="#800080"
+            android:textSize="24sp"
             android:textStyle="bold"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"/>
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal" />
 
         <ImageView
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:src="@drawable/apply_band_member" />
+            android:src="@drawable/apply_band_member"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp" />
 
         <TextView
             android:id="@+id/bandInfoText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Find a Band"
-            android:textColor="#000000"
+            android:textColor="#800080"
             android:textSize="18sp"
-            android:paddingTop="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:clickable="true"
-            android:focusable="true" />
+            android:focusable="true"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold|italic"
+            android:background="@drawable/textview_border"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
 
         <EditText
             android:id="@+id/editTextText2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text"
             android:hint="Name"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp" />
+            android:background="@android:drawable/edit_text"
+            android:padding="12dp"
+            android:textColor="#000000"
+            android:layout_marginTop="20dp" />
 
         <EditText
             android:id="@+id/editTextAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Address"
-            android:layout_marginBottom="20dp" />
+            android:background="@android:drawable/edit_text"
+            android:padding="12dp"
+            android:textColor="#000000"
+            android:layout_marginTop="16dp" />
 
         <EditText
             android:id="@+id/editTextPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Phone Number"
-            android:layout_marginBottom="20dp" />
+            android:background="@android:drawable/edit_text"
+            android:padding="12dp"
+            android:textColor="#000000"
+            android:layout_marginTop="16dp" />
 
         <AutoCompleteTextView
             android:id="@+id/genreDropdown"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Music Genre"
-            android:layout_marginBottom="20dp"
+            android:background="@android:drawable/edit_text"
+            android:padding="12dp"
+            android:focusable="false"
             android:inputType="none"
-            android:focusable="false" />
+            android:layout_marginTop="16dp" />
 
         <AutoCompleteTextView
             android:id="@+id/instrumentDropdown"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Instrument"
-            android:layout_marginBottom="20dp"
+            android:background="@android:drawable/edit_text"
+            android:padding="12dp"
+            android:focusable="false"
             android:inputType="none"
-            android:focusable="false" />
+            android:layout_marginTop="16dp" />
 
         <Button
             android:id="@+id/button"
-            android:layout_width="199dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Apply" />
+            android:text="Apply"
+            android:textColor="#FFFFFF"
+            android:background="#800080"
+            android:layout_marginTop="24dp"
+            android:padding="14dp"
+            android:paddingBottom="30dp"/>
 
     </LinearLayout>
+
 </ScrollView>

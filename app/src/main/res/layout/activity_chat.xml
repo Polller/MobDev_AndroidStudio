@@ -3,8 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="12dp"
-    android:background="#F3F4F6">
+    android:background="#e1e1e1">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#800080"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:id="@+id/chatNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chat Name"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFf"
+            android:gravity="center"
+            android:padding="8dp" />
+    </RelativeLayout>
 
     <ScrollView
         android:id="@+id/chatScroll"

@@ -1,19 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:padding="16dp">
+    android:layout_height="match_parent" android:background="#FFFFFF">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#800080"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Specific Band Finder"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/sbfTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SBF"
+        android:text="    CHAT LIST"
         android:textColor="#800080"
         android:textSize="60sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/textview_border"/>
 
     <ListView
         android:id="@+id/chatListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="#F3E5F5"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp" />
 </LinearLayout>

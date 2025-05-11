@@ -2,195 +2,204 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4B5563">
+    android:background="#e1e1e1">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:orientation="vertical"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:gravity="center_horizontal">
+            android:layout_height="56dp"
+            android:background="#800080"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@android:drawable/ic_media_previous"
+                android:tint="#FFFFFF" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end|center_vertical"
-                android:paddingStart="4dp"
-                android:text="User Account"
-                android:textColor="#D1D5DB" />
+                android:layout_centerInParent="true"
+                android:text="Specific Band Finder"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_margin="16dp">
+
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/ic_menu_search"
+                android:padding="8dp"
+                android:contentDescription="Search Icon" />
+
+            <EditText
+                android:id="@+id/searchEditText"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:hint="Search..."
+                android:padding="12dp"
+                android:background="@drawable/rounded_white_box"
+                android:textColor="#800080"
+                android:textColorHint="#999999" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <TextView
-                android:id="@+id/sbfTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SBF"
                 android:textColor="#800080"
                 android:textSize="60sp"
                 android:textStyle="bold" />
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:id="@+id/topHiringBandLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/top_hiring_band" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Top Hiring Band"
+                        android:textColor="#800080" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/genreTypeLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/genre_type" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Genre Type"
+                        android:textColor="#800080" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/musicArtistTypeLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/music_artist_type" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Music Artist Type"
+                        android:textColor="#800080" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/musicGenerationTypeLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/music_generation_type" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Music Generation Type"
+                        android:textColor="#800080" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/applyBandMemberLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/apply_band_member" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Apply Band Member"
+                        android:textColor="#800080" />
+                </LinearLayout>
+            </GridLayout>
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="20dp">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@android:drawable/ic_menu_rotate" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#D1D5DB"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="8dp">
-
-                <EditText
-                    android:id="@+id/searchEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Search..."
-                    android:padding="10dp"
-                    android:background="@android:color/transparent"
-                    android:textColor="#000"
-                    android:textColorHint="#777" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <GridLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:columnCount="2"
-            android:padding="10dp">
-
-            <LinearLayout
-                android:id="@+id/topHiringBandLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"
-                android:clickable="true"
-                android:focusable="true">
-
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:src="@drawable/top_hiring_band" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Top Hiring Band"
-                    android:textColor="#D1D5DB" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/genreTypeLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"
-                android:clickable="true"
-                android:focusable="true">
-
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:src="@drawable/genre_type" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Genre Type"
-                    android:textColor="#D1D5DB" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/musicArtistTypeLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"
-                android:clickable="true"
-                android:focusable="true">
-
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:src="@drawable/music_artist_type" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Music Artist Type"
-                    android:textColor="#D1D5DB" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/musicGenerationTypeLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"
-                android:clickable="true"
-                android:focusable="true">
-
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:src="@drawable/music_generation_type" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Music Generation Type"
-                    android:textColor="#D1D5DB" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/applyBandMemberLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"
-                android:clickable="true"
-                android:focusable="true">
-
-                <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:src="@drawable/apply_band_member" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Apply Band Member"
-                    android:textColor="#D1D5DB" />
-            </LinearLayout>
-        </GridLayout>
 
         <LinearLayout
             android:id="@+id/footerLayout"
@@ -200,56 +209,20 @@
             android:orientation="horizontal"
             android:gravity="center"
             android:padding="16dp"
-            android:background="@drawable/rounded_footer">
+            android:background="@drawable/footer_background">
 
-            <LinearLayout
-                android:id="@+id/footerLogsLayout"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:clickable="true"
-                android:focusable="true">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@android:drawable/ic_menu_info_details"
-                    android:layout_marginEnd="8dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="History"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp" />
+            <LinearLayout android:id="@+id/footerLogsLayout" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="horizontal" android:gravity="center" android:clickable="true" android:focusable="true">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_info_details" android:layout_marginEnd="8dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="History" android:textColor="#FFFFFF" android:textSize="16sp"/>
             </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/footerChatLayout"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:clickable="true"
-                android:focusable="true">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@android:drawable/ic_menu_send"
-                    android:layout_marginEnd="8dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Chat"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp" />
+            <LinearLayout android:id="@+id/footerChatLayout" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="horizontal" android:gravity="center" android:clickable="true" android:focusable="true">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_send" android:layout_marginEnd="8dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Chat" android:textColor="#FFFFFF" android:textSize="16sp"/>
             </LinearLayout>
-
+            <LinearLayout android:id="@+id/footerStatusLayout" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="horizontal" android:gravity="center" android:clickable="true" android:focusable="true">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_agenda" android:layout_marginEnd="8dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Status" android:textColor="#FFFFFF" android:textSize="16sp"/>
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>

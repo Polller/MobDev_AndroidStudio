@@ -2,50 +2,86 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E5E5E5">
+    android:background="#e1e1e1">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="30dp">
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <!-- Header Bar -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#800080"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@android:drawable/ic_media_previous"
+                android:tint="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Vocalist Hiring"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <!-- Main Content -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Music Artist Type Page"
-            android:textColor="#000000"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            android:paddingBottom="20dp"/>
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="16dp">
 
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/music_artist_type" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Music Artist Type Page"
+                android:textColor="#800080"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:paddingBottom="20dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Vinzem Acabo: 97% hiring"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"/>
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/music_artist_type"
+                android:layout_marginBottom="12dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Other Music Artists:"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:paddingBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paulo Seares: 97% hiring"
+                android:textColor="#800080"
+                android:textSize="20sp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textStyle="bold|italic"
+                android:background="@drawable/textview_border"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:layout_marginBottom="6dp"/>
 
+        </LinearLayout>
         <ListView
             android:id="@+id/artistListView"
             android:layout_width="match_parent"
-            android:layout_height="247dp" />
+            android:layout_height="400dp"
+            android:dividerHeight="10dp"
+            android:background="#F3E5F5"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp" />
+
     </LinearLayout>
 </ScrollView>

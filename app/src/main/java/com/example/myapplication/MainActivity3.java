@@ -4,13 +4,18 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity3 extends AppCompatActivity {
@@ -37,13 +42,50 @@ public class MainActivity3 extends AppCompatActivity {
             "📍 Location: Iloilo City, Philippines\n🎶 Genre: Ambient Rock\n💰 Price: ₱19,000 - ₱29,000 per show"
     };
 
+    int[] imageIds = {
+            R.drawable.shadow_notes,
+            R.drawable.echo_pulse,
+            R.drawable.neon_rhythms,
+            R.drawable.bass_breakers,
+            R.drawable.crimson_sound,
+            R.drawable.funky_strums,
+            R.drawable.golden_mic,
+            R.drawable.silent_amp
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_top_hiring_band);
 
         ListView bandListView = findViewById(R.id.bandListView);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, bands);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                this,
+                android.R.layout.activity_list_item,
+                android.R.id.text1,
+                bands
+        ) {
+            @NonNull
+            @Override
+            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+
+                TextView textView = view.findViewById(android.R.id.text1);
+                ImageView imageView = view.findViewById(android.R.id.icon);
+
+                textView.setText(bands[position]);
+                textView.setTextSize(18f);
+
+                imageView.setImageResource(imageIds[position]);
+                imageView.getLayoutParams().width = 100;
+                imageView.getLayoutParams().height = 100;
+                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+
+                return view;
+            }
+        };
+
         bandListView.setAdapter(adapter);
 
         bandListView.setOnItemClickListener((parent, view, position, id) -> {
@@ -57,7 +99,6 @@ public class MainActivity3 extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(bandName);
 
-        // Band description
         TextView descriptionView = new TextView(this);
         descriptionView.setText(description);
         descriptionView.setPadding(30, 30, 30, 30);
@@ -70,11 +111,9 @@ public class MainActivity3 extends AppCompatActivity {
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.addView(scrollView);
 
-        // Hire button
         Button hireButton = new Button(this);
         hireButton.setText("Hire Band");
         hireButton.setOnClickListener(v -> {
-            // Save to SharedPreferences
             SharedPreferences prefs = getSharedPreferences("chat_prefs", MODE_PRIVATE);
             String existingChats = prefs.getString("chat_list", "");
             if (!existingChats.contains(bandName)) {
@@ -82,7 +121,6 @@ public class MainActivity3 extends AppCompatActivity {
                 prefs.edit().putString("chat_list", existingChats).apply();
             }
 
-            // Go to ChatListActivity
             Intent intent = new Intent(MainActivity3.this, ChatListActivity.class);
             startActivity(intent);
         });
