@@ -31,6 +31,14 @@ public class ChatListActivity extends AppCompatActivity {
             case "Funky Strums": return R.drawable.funky_strums;
             case "Golden Mic": return R.drawable.golden_mic;
             case "Silent Amp": return R.drawable.silent_amp;
+            case "Vinzem Acabo": return R.drawable.vinzem;
+            case "Wawa Luardo": return R.drawable.wawa;
+            case "Paulo Seares": return R.drawable.paulo;
+            case "Stephen Seares": return R.drawable.stephen;
+            case "Kenny Ken de Lara": return R.drawable.kenny;
+            case "Michael Catubig": return R.drawable.michael;
+            case "Yves Mayol": return R.drawable.yves;
+            case "Kent Recede": return R.drawable.kent;
             default: return R.drawable.account;
         }
     }
@@ -51,7 +59,7 @@ public class ChatListActivity extends AppCompatActivity {
             String[] hiredBands = savedChats.split(";");
             for (String band : hiredBands) {
                 if (!chatList.contains(band)) {
-                    chatList.add(0, band); // Add new bands at the top
+                    chatList.add(0, band);
                 }
             }
         }

@@ -22,7 +22,7 @@ public class MainActivity9 extends AppCompatActivity {
         String allLogs = prefs.getString("logs", "");
 
         if (!allLogs.isEmpty()) {
-            String[] entries = allLogs.split("\\|\\|"); // Split by our delimiter
+            String[] entries = allLogs.split("\\|\\|");
             for (String entry : entries) {
                 addHireLog(entry);
             }

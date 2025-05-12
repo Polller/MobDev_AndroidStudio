@@ -34,25 +34,25 @@ public class MainActivity4 extends AppCompatActivity {
         String[] bands;
         switch (genre) {
             case "Hip Hop":
-                bands = new String[]{"Band 1: Hip Hop Group 1", "Band 2: Hip Hop Group 2", "Band 3: Hip Hop Group 3"};
+                bands = new String[]{"Wu-Tang Clan", "Run-D.M.C.", "N.W.A"};
                 break;
             case "Classical":
-                bands = new String[]{"Band 1: Classical Group 1", "Band 2: Classical Group 2", "Band 3: Classical Group 3"};
+                bands = new String[]{"Berlin Philharmonic", "Kronos Quartet", "The Piano Guys"};
                 break;
             case "Rock":
-                bands = new String[]{"Band 1: Rock Group 1", "Band 2: Rock Group 2", "Band 3: Rock Group 3"};
+                bands = new String[]{"Queen", "Foo Fighters", "Arctic Monkeys"};
                 break;
             case "Jazz":
-                bands = new String[]{"Band 1: Jazz Group 1", "Band 2: Jazz Group 2", "Band 3: Jazz Group 3"};
+                bands = new String[]{"Snarky Puppy", "The Dave Brubeck Quartet", "Weather Report"};
                 break;
             case "Pop":
-                bands = new String[]{"Band 1: Pop Group 1", "Band 2: Pop Group 2", "Band 3: Pop Group 3"};
+                bands = new String[]{"Maroon 5", "BTS", "OneRepublic"};
                 break;
             case "EDM":
-                bands = new String[]{"Band 1: EDM Group 1", "Band 2: EDM Group 2", "Band 3: EDM Group 3"};
+                bands = new String[]{"Swedish House Mafia", "The Chainsmokers", "Zeds Dead"};
                 break;
             case "Country":
-                bands = new String[]{"Band 1: Country Group 1", "Band 2: Country Group 2", "Band 3: Country Group 3"};
+                bands = new String[]{"Zac Brown Band", "Lady A (formerly Lady Antebellum)", "Florida Georgia Line"};
                 break;
             default:
                 bands = new String[]{"No bands available"};
@@ -63,7 +63,6 @@ public class MainActivity4 extends AppCompatActivity {
                 .setItems(bands, (dialog, which) -> {
                     String selectedBand = bands[which];
 
-                    // Save to SharedPreferences chat list
                     SharedPreferences prefs = getSharedPreferences("chat_prefs", MODE_PRIVATE);
                     String existingChats = prefs.getString("chat_list", "");
                     if (!existingChats.contains(selectedBand)) {
@@ -71,7 +70,6 @@ public class MainActivity4 extends AppCompatActivity {
                         prefs.edit().putString("chat_list", existingChats).apply();
                     }
 
-                    // Open Chat List
                     Intent intent = new Intent(MainActivity4.this, ChatListActivity.class);
                     startActivity(intent);
                 })

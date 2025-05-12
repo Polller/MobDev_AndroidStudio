@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -36,7 +37,6 @@ public class ChatActivity extends AppCompatActivity {
 
         chatName = getIntent().getStringExtra("chatName");
 
-        // Set chat name at the top
         TextView chatNameText = findViewById(R.id.chatNameText);
         chatNameText.setText(chatName);
 
@@ -44,8 +44,16 @@ public class ChatActivity extends AppCompatActivity {
         loadMessages();
 
         sendButton.setOnClickListener(v -> {
-            String message = inputMessage.getText().toString().trim();
+            String message = inputMessage.getText().toString().trim().toLowerCase();
             if (!message.isEmpty()) {
+
+                if (message.equals("pending") || message.equals("accepted") || message.equals("cancelled")) {
+                    saveBandStatus(chatName, message);
+                    Intent intent = new Intent(ChatActivity.this, BandStatusActivity.class);
+                    startActivity(intent);
+                    return;
+                }
+
                 addMessageToChat(message, true);
                 messageList.add("user:" + message);
                 inputMessage.setText("");
@@ -60,6 +68,15 @@ public class ChatActivity extends AppCompatActivity {
                 saveMessages();
             }
         });
+    }
+
+    private void saveBandStatus(String name, String status) {
+        SharedPreferences prefs = getSharedPreferences("band_status", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(name, status);
+        editor.putString(name + "_hiredOn", "2025-05-12 at 4:00 PM");
+        editor.putString(name + "_bookingDate", "2025-05-20");
+        editor.apply();
     }
 
     private void addMessageToChat(String message, boolean isUser) {

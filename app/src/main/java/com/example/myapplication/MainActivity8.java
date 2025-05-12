@@ -63,7 +63,6 @@ public class MainActivity8 extends AppCompatActivity {
                     .show();
         });
 
-        // Load saved form data
         SharedPreferences savedPrefs = getSharedPreferences("application_data", MODE_PRIVATE);
         nameField.setText(savedPrefs.getString("name", ""));
         addressField.setText(savedPrefs.getString("address", ""));
@@ -71,7 +70,6 @@ public class MainActivity8 extends AppCompatActivity {
         genreDropdown.setText(savedPrefs.getString("genre", ""));
         bandInfoText.setText(savedPrefs.getString("bandInfo", "Find a Band"));
 
-        // Apply button logic
         applyButton.setOnClickListener(v -> {
             String name = nameField.getText().toString().trim();
             String address = addressField.getText().toString().trim();

@@ -1,13 +1,15 @@
 package com.example.myapplication;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Map;
 
 public class BandStatusActivity extends AppCompatActivity {
 
@@ -20,22 +22,24 @@ public class BandStatusActivity extends AppCompatActivity {
 
         hireLogsContainer = findViewById(R.id.hireLogsContainer);
 
-        String[][] bandData = {
-                {"The Rocking Beats", "Rock", "2025-05-01 at 3:00 PM", "2025-05-10", "Accepted"},
-                {"DJ SonicWave", "Electronic", "2025-04-25 at 10:00 AM", "2025-05-03", "Cancelled"},
-                {"Acoustic Flow", "Acoustic", "2025-04-15 at 1:30 PM", "2025-04-20", "Accepted"},
-                {"Jazz Pulse", "Jazz", "2025-03-28 at 5:00 PM", "2025-04-05", "Pending"},
-                {"Electric Storm", "EDM", "2025-03-15 at 2:00 PM", "2025-03-22", "Cancelled"},
-                {"Folk Harmony", "Folk", "2025-03-01 at 11:00 AM", "2025-03-10", "Accepted"},
-                {"The Vocal Vibes", "Pop", "2025-02-20 at 4:30 PM", "2025-03-01", "Pending"}
-        };
+        SharedPreferences prefs = getSharedPreferences("band_status", MODE_PRIVATE);
+        Map<String, ?> allEntries = prefs.getAll();
 
-        for (String[] band : bandData) {
-            addBandCard(band);
+        hireLogsContainer.removeAllViews();
+
+        for (Map.Entry<String, ?> entry : allEntries.entrySet()) {
+            String key = entry.getKey();
+            if (!key.contains("_") && entry.getValue() instanceof String) {
+                String bandName = key;
+                String status = (String) entry.getValue();
+                String hiredOn = prefs.getString(bandName + "_hiredOn", "Unknown");
+                String bookingDate = prefs.getString(bandName + "_bookingDate", "Unknown");
+                addBandCard(bandName, hiredOn, bookingDate, status);
+            }
         }
     }
 
-    private void addBandCard(String[] band) {
+    private void addBandCard(String nameStr, String hiredStr, String bookingStr, String statusStr) {
         LinearLayout card = new LinearLayout(this);
         card.setOrientation(LinearLayout.VERTICAL);
         card.setPadding(24, 24, 24, 24);
@@ -50,52 +54,46 @@ public class BandStatusActivity extends AppCompatActivity {
         card.setLayoutParams(cardParams);
 
         TextView name = new TextView(this);
-        name.setText("Name: " + band[0]);
+        name.setText("Name: " + nameStr);
         name.setTextSize(16);
         name.setTextColor(Color.BLACK);
         card.addView(name);
 
-        TextView genre = new TextView(this);
-        genre.setText("Genre: " + band[1]);
-        genre.setTextSize(16);
-        genre.setTextColor(Color.BLACK);
-        card.addView(genre);
-
         TextView hired = new TextView(this);
-        hired.setText("Hired On: " + band[2]);
+        hired.setText("Hired On: " + hiredStr);
         hired.setTextSize(16);
         hired.setTextColor(Color.BLACK);
         card.addView(hired);
 
         TextView booking = new TextView(this);
-        booking.setText("Booking Date: " + band[3]);
+        booking.setText("Booking Date: " + bookingStr);
         booking.setTextSize(16);
         booking.setTextColor(Color.BLACK);
         card.addView(booking);
 
         TextView status = new TextView(this);
-        status.setText("Status: " + band[4]);
+        status.setText("Status: " + statusStr);
         status.setTextSize(16);
-        status.setPadding(0, 10, 0, 0);
         status.setTextColor(Color.WHITE);
         status.setGravity(Gravity.CENTER);
         status.setPadding(16, 8, 16, 8);
 
-        switch (band[4].toLowerCase()) {
+        switch (statusStr.toLowerCase()) {
             case "accepted":
-                status.setBackgroundColor(Color.parseColor("#4CAF50")); // Green
+                status.setBackgroundColor(Color.parseColor("#4CAF50"));
                 break;
             case "pending":
-                status.setBackgroundColor(Color.parseColor("#FFC107")); // Amber
+                status.setBackgroundColor(Color.parseColor("#FFC107"));
                 break;
             case "cancelled":
-                status.setBackgroundColor(Color.parseColor("#F44336")); // Red
+                status.setBackgroundColor(Color.parseColor("#F44336"));
                 break;
             default:
                 status.setBackgroundColor(Color.GRAY);
         }
 
         card.addView(status);
-        hireLogsContainer.addView(card);
+
+        hireLogsContainer.addView(card, 0);
     }
 }

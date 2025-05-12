@@ -44,27 +44,27 @@
         </RelativeLayout>
 
         <EditText
-    android:id="@+id/emailEditText"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:minHeight="48dp"
-    android:background="#C9C9E0"
-    android:padding="10dp"
-    android:hint="Email:"
-    android:textColor="#000000"
-    android:textColorHint="#808080" />
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:background="#C9C9E0"
+            android:padding="10dp"
+            android:hint="Email:"
+            android:textColor="#000000"
+            android:textColorHint="#808080" />
 
         <EditText
-    android:id="@+id/passwordEditText"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:minHeight="48dp"
-    android:background="#C9C9E0"
-    android:padding="10dp"
-    android:hint="Password:"
-    android:textColor="#000000"
-    android:textColorHint="#808080"
-    android:inputType="textPassword" />
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:background="#C9C9E0"
+            android:padding="10dp"
+            android:hint="Password:"
+            android:textColor="#000000"
+            android:textColorHint="#808080"
+            android:inputType="textPassword" />
 
         <Button
             android:id="@+id/signInButton"
@@ -99,9 +99,11 @@
                 android:layout_marginEnd="30dp">
 
                 <ImageView
+                    android:id="@+id/facebookIcon"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/fb" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -117,9 +119,11 @@
                 android:gravity="center">
 
                 <ImageView
+                    android:id="@+id/googleIcon"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/google" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

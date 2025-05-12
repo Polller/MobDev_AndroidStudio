@@ -4,12 +4,9 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.Button;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.*;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -37,13 +34,24 @@ public class MainActivity5 extends AppCompatActivity {
             "🎤 Favorite Artists: Sia, Florence Welch\n🎶 Genre: Indie, Art Pop\n🌟 Why Hire: Kent offers ethereal and strong vocals that blend art and sound."
     };
 
+    int[] artistImages = {
+            R.drawable.vinzem,
+            R.drawable.wawa,
+            R.drawable.paulo,
+            R.drawable.stephen,
+            R.drawable.kenny,
+            R.drawable.michael,
+            R.drawable.yves,
+            R.drawable.kent
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_artist_type);
 
         ListView artistListView = findViewById(R.id.artistListView);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, artists);
+        ArtistAdapter adapter = new ArtistAdapter();
         artistListView.setAdapter(adapter);
 
         artistListView.setOnItemClickListener((parent, view, position, id) -> {
@@ -89,5 +97,48 @@ public class MainActivity5 extends AppCompatActivity {
         builder.setView(layout);
         builder.setNegativeButton("Close", null);
         builder.show();
+    }
+
+    private class ArtistAdapter extends BaseAdapter {
+
+        @Override
+        public int getCount() {
+            return artists.length;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return artists[position];
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            LinearLayout row = new LinearLayout(MainActivity5.this);
+            row.setOrientation(LinearLayout.HORIZONTAL);
+            row.setPadding(16, 16, 16, 16);
+            row.setBackgroundColor(0xFFFFFFFF);
+
+            ImageView imageView = new ImageView(MainActivity5.this);
+            imageView.setImageResource(artistImages[position]);
+            imageView.setLayoutParams(new LinearLayout.LayoutParams(120, 120));
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setPadding(0, 0, 20, 0);
+
+            TextView textView = new TextView(MainActivity5.this);
+            textView.setText(artists[position]);
+            textView.setTextSize(18f);
+            textView.setTextColor(0xFF800080);
+            textView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+            row.addView(imageView);
+            row.addView(textView);
+
+            return row;
+        }
     }
 }
