@@ -24,6 +24,7 @@
         <activity android:name=".MainActivity6" android:exported="true"/>
         <activity android:name=".MainActivity8" android:exported="true"/>
         <activity android:name=".MainActivity9" android:exported="true"/>
+        <activity android:name=".RegisterActivity" android:exported="true"/>
         <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

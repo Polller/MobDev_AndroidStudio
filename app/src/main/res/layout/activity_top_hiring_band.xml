@@ -20,7 +20,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="Vocalist Hiring"
+                android:text="Top Hiring Band"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="20dp"
-                android:text="Vocalist Hiring Page"
+                android:text="Top Hiring Band"
                 android:textColor="#800080"
                 android:textSize="26sp"
                 android:textStyle="bold" />
